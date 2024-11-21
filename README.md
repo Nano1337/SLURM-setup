@@ -104,7 +104,7 @@ StateSaveLocation=/var/spool/slurm/ctld
 SlurmdSpoolDir=/var/spool/slurm/d
 
 # COMPUTE NODES
-NodeName=localhost CPUs=4 RealMemory=31640 State=UNKNOWN Gres=gpu:l40s:1
+NodeName=localhost CPUs=4 RealMemory=31640 State=UNKNOWN Gres=gpu:1
 PartitionName=main Nodes=localhost Default=YES MaxTime=INFINITE State=UP
 ```
 
@@ -115,7 +115,7 @@ sudo nano /etc/slurm/gres.conf
 
 Add this content:
 ```ini
-NodeName=localhost Name=gpu Type=l40s File=/dev/nvidia0 Count=1
+NodeName=localhost Name=gpu File=/dev/nvidia0 Count=1
 ```
 
 8. Start services in the correct order:
